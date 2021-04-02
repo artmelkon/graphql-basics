@@ -1,0 +1,26 @@
+{
+  "name": "graphql-basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production babel-node src/index.js",
+    "start-dev": "NODE_ENV=development nodemon src/index.js --ext js,graphql --exec babel-node"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "graphql-yoga": "^1.18.3",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  }
+}

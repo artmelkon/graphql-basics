@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.fontSize": 10,
+		"editor.tabSize": 2,
+		"editor.wordWrap": "on",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1000,
+		"workbench.colorCustomizations": {
+			"tab.activeBackground": "#013f30",
+			"tab.activeBorder": "#ff0000"
+		}
+	}
+}
