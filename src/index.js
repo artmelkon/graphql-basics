@@ -13,7 +13,7 @@ import Comment from './graphql/resolvers/Comment';
 console.log(morgan('tiny'));
 
 const server = new GraphQLServer({
-  typeDefs: './graphql/schema.graphql',
+  typeDefs: './src/graphql/schema.graphql',
   resolvers: {
     Query,
     Mutation,
