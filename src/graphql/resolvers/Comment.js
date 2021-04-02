@@ -9,6 +9,6 @@ const Comment = {
       return post.id === parent.post;
     })
   }
-},
+}
 
 export { Comment as default }
