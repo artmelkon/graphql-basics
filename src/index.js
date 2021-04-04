@@ -1,6 +1,5 @@
 import { GraphQLServer } from  'graphql-yoga';
-import _ from 'lodash';
-// import winston from 'winston';
+import winston, { loggers } from 'winston';
 import morgan from 'morgan';
 
 import db from './utils/db';
@@ -25,4 +24,20 @@ const server = new GraphQLServer({
     db
   }
 });
-server.start(() => console.log(`The server is up!`));
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    new winston.transports.File({filename: './logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: './logs/logs.log'})
+  ]
+})
+
+if(process.env.NODE_ENV === 'development') {
+  console.log('NODE ENV ', process.env.NODE_ENV)
+  logger.add(new winston.transports.Console({
+    format: winston.format.combine(winston.format.timestamp(), winston.format.simple()),
+  }))
+}
+server.start(() => logger.log('info', `The server is up!`));
